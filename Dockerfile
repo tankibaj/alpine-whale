@@ -3,7 +3,7 @@ FROM alpine:3.18.0
 
 # Install Bash and Vim
 RUN apk update && \
-    apk add --no-cache bash vim && \
+    apk add --no-cache bash vim curl bind-tools && \
     rm -rf /var/cache/apk/*
 
 # Set the default shell to Bash
