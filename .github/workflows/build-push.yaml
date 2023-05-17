@@ -1,9 +1,10 @@
 name: CI
 
 on:
+  schedule:
+    - cron: '26 2 * * *'
   push:
-    tags:
-      - '*'
+    tags: ['*']
 
 env:
   IMAGE_NAME: alpine-whale
