@@ -15,5 +15,5 @@ To use the alpine-whale Docker image with kubectl in a Kubernetes environment, y
 - Run a Kubernetes pod:
 
   ```bash
-  kubectl run busybox --rm --image=thenaim/alpine-whale -i --tty
+  kubectl run alpine-whale --rm --image=thenaim/alpine-whale -i --tty
   ```
