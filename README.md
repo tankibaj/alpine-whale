@@ -1,5 +1,5 @@
 # Alpine-Whale
-Alpine-Whale is a lightweight Docker image based on Alpine Linux, featuring a custom prompt with a whale emoji. It includes Bash, Vim, and a colorful prompt with customizable colors for the username, hostname, path, arrow, and dollar sign.
+Alpine-Whale is a lightweight Docker image based on Alpine Linux, featuring a custom prompt with a whale emoji. It includes Bash, Vim, and a colorful prompt.
 
 ### Getting Started
 To use the alpine-whale Docker image with kubectl in a Kubernetes environment, you need to have Docker and Kubernetes tools installed on your system. Follow these steps to get started:
