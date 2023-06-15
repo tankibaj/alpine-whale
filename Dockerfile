@@ -1,5 +1,5 @@
 # Use the official Alpine base image
-FROM alpine:3.18.0
+FROM alpine:latest
 
 # Install Bash and Vim
 RUN apk update && \
