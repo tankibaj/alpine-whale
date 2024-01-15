@@ -1,9 +1,9 @@
 # Use the official Alpine base image
 FROM alpine:latest
 
-# Install Bash and Vim
+# Install packages
 RUN apk update && \
-    apk add --no-cache bash vim curl bind-tools && \
+    apk add --no-cache bash vim curl bind-tools jq && \
     rm -rf /var/cache/apk/*
 
 # Set the default shell to Bash
