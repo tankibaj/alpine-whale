@@ -1,5 +1,5 @@
 # Use the official Alpine base image
-FROM alpine:latest
+FROM alpine:3.19.1
 
 # Install packages
 RUN apk update && \

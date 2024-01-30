@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# Name of the buildx environment
+BUILDX_ENV_NAME="buildx"
+
+# Function to check if buildx environment exists
+check_buildx_env() {
+    if ! docker buildx inspect "$BUILDX_ENV_NAME" >/dev/null 2>&1; then
+        echo "Creating buildx environment: $BUILDX_ENV_NAME"
+        docker buildx create --use --name "$BUILDX_ENV_NAME" || {
+            echo "Failed to create buildx environment."
+            exit 1
+        }
+    else
+        echo "Buildx environment '$BUILDX_ENV_NAME' is ready."
+    fi
+}
+# Function to build and push Docker image
+build_and_push_image() {
+    echo -n "Enter the image tag (e.g., '3.19.1'): "
+    read -r image_tag
+    docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 \
+        -t "thenaim/alpine-whale:$image_tag" \
+        --push . || {
+        echo "Failed to build and push Docker image."
+        exit 1
+    }
+}
+
+# Main script execution
+check_buildx_env
+build_and_push_image
+echo "Docker image build and push completed."
